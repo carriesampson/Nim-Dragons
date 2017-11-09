@@ -8,10 +8,75 @@
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous">
     </script>
+    <link
+    href="https://fonts.googleapis.com/css?family=Delius|Delius+Swash+Caps|Eagle+Lake|Lakki+Reddy|Merienda+One|Short+Stack" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/main.js"></script>
   </head>
+
   <body>
+    <!--HEADER-------------------------------->
+    <header>
+      <!--Consider adding cloud animation behind header text-->
+      <h1>Nim-Nim</h1>
+    </header>
+
+    <!--NAVIGATION-------------------------------->
+    <nav>
+      <!--Revisit flexbox and styles-->
+      <!--Play button loads game in main content area-->
+      <!--Click others to reveal details in main content area-->
+      <a href="#"><h3 id="playButton">PLAY</h3></a>
+      <a href="#"><h3>Instructions</h3></a>
+      <a href="#"><h3>Options</h3></a>
+      <a href="#"><h3>About</h3></a>
+    </nav>
+
+
+    <!--MAIN CONTAINERS-------------------------------->
+    <main id="main">
+
+      <!--PRE-PLAY-->
+      <div id="prePlayContainer">
+        <!--Default to instructions in container-->
+        <!--On nav click replacement of container contents to options, about, or to initiate game play-->
+      </div>
+
+      <!--GAME PLAY-->
+      <div id="gameplayContainer">
+        <!--Column 1: User Details-->
+        <section id="colPlayer1">
+          <div id="player1Lives"></div>
+          <div id="player1Avatar"></div>
+        </section>
+        <!--Column 2: Gameplay container-->
+        <section id="colGameplay">
+        <!--Level Communication (3 total levels)-->
+          <p id="levelText"></p>
+          <!--Game board-->
+          <div id="gameBoard"></div>
+        </section>
+        <!--Column 3: Opponent Details-->
+        <section id="colPlayer2">
+          <div id="player2Lives"></div>
+          <div id="player2Avatar"></div>
+        </section>
+      </div>
+
+      <!--WIN/LOSS STATE-->
+      <div id="winLossContainer">
+        <!--Replacement of container contents to game play outcome-->
+      </div>
+
+    </main>
+
+  <!--FOOTER-------------------------------->
+    <footer>
+      <p id="footer">Footer Text Here</p>
+      <div id="cloud-animation">
+        <!--CSS animations to be leveraged in footer-->
+      </div>
+    </footer>
 
   </body>
 </html>
