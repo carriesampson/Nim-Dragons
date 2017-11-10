@@ -12,26 +12,16 @@ $( () => {
 //GAMEBOARD ROW CREATION (X6 ROWS OF 5 BUBBLES)
   for (let i = 0; i < 5; i++) {
     let $bubbles1 = $("<h2>").addClass("bubbles").text("O");
-    $row1.append($bubbles1);
-  };
-  for (let i = 0; i < 5; i++) {
     let $bubbles2 = $("<h2>").addClass("bubbles").text("O");
-    $row2.append($bubbles2);
-  };
-  for (let i = 0; i < 5; i++) {
     let $bubbles3 = $("<h2>").addClass("bubbles").text("O");
-    $row3.append($bubbles3);
-  };
-  for (let i = 0; i < 5; i++) {
     let $bubbles4 = $("<h2>").addClass("bubbles").text("O");
-    $row4.append($bubbles4);
-  };
-  for (let i = 0; i < 5; i++) {
     let $bubbles5 = $("<h2>").addClass("bubbles").text("O");
+    let $bubbles6 = $("<h2>").addClass("bubbles").text("O");    
+    $row1.append($bubbles1);
+    $row2.append($bubbles2);
+    $row3.append($bubbles3);
+    $row4.append($bubbles4);
     $row5.append($bubbles5);
-  };
-  for (let i = 0; i < 5; i++) {
-    let $bubbles6 = $("<h2>").addClass("bubbles").text("O");
     $row6.append($bubbles6);
   };
 
