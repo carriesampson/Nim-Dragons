@@ -36,31 +36,42 @@
     <!--MAIN CONTAINERS-------------------------------->
     <main id="main">
 
-      <!--PRE-PLAY-->
-      <div id="prePlayContainer">
-        <!--Default to instructions in container-->
-        <!--On nav click replacement of container contents to options, about, or to initiate game play-->
+      <!--INSTRUCTIONS-->
+      <div id="instructionsContainer" class="nonPlayScreens">
+        <h2>Instructions</h2>
+      </div>
+
+      <!--OPTIONS-->
+      <div id="optionsContainer" class="nonPlayScreens">
+        <h2>Options</h2>
+      </div>
+
+      <!--ABOUT-->
+      <div id="aboutContainer" class="nonPlayScreens">
+        <h2>About</h2>
       </div>
 
       <!--GAME PLAY-->
       <div id="gameplayContainer">
         <!--Column 1: User Details-->
-        <section id="colPlayer1">
+        <div id="colPlayer1" class="columns">
+          <h4> Player 1</h4>
           <div id="player1Lives"></div>
           <div id="player1Avatar"></div>
-        </section>
+        </div>
         <!--Column 2: Gameplay container-->
-        <section id="colGameplay">
+        <div id="colGameplay" class="columns">
         <!--Level Communication (3 total levels)-->
-          <p id="levelText"></p>
+          <h4 id="levelText"></h4>
           <!--Game board-->
           <div id="gameBoard"></div>
-        </section>
+        </div>
         <!--Column 3: Opponent Details-->
-        <section id="colPlayer2">
+        <div id="colPlayer2" class="columns">
+          <h4>Player 2</h4>
           <div id="player2Lives"></div>
           <div id="player2Avatar"></div>
-        </section>
+        </div>
       </div>
 
       <!--WIN/LOSS STATE-->

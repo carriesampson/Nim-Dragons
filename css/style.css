@@ -16,24 +16,69 @@ body {
 }
 
 h1 {
-  text-align: center;
-  font-size: 82px;
   font-family: 'Lakki Reddy', cursive;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-top: 60px;
+  font-size: 82px;
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 nav {
-  display: inline-flex;
-  flex-grow: 1;
+  display: flex;
 }
 
 nav a {
+  color: blue;
+  display: flex;
+  flex-grow: 1;
   text-decoration: none;
+  justify-content: center;
+  margin-top: -10px;
+  margin-bottom: -25px;
+}
+
+h2 {
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 36px;
+  text-align: center;
 }
 
 h3 {
-  font-size: 22px;
   font-family: 'Lakki Reddy', cursive;
+  font-size: 24px;
+}
+
+h4 {
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 18px;
+  text-align: center;
+}
+
+.nonPlayScreens {
+  height: 100px;
+}
+
+#gameplayContainer {
+  display: flex;
+  flex-direction: row;
+  height: 600px;
+}
+
+#colPlayer1 {
+  display: flex;
+  flex-grow: .75;
+  flex-direction: column;
+}
+
+#colPlayer2 {
+  display: flex;
+  flex-grow: .75;
+  flex-direction: column;
+}
+
+#colGameplay {
+  display: flex;
+  flex-grow: 2.5;
+  flex-direction: column;
 }
