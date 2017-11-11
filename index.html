@@ -27,22 +27,13 @@
 
       <!--INSTRUCTIONS-->
       <div id="instructionsContainer" class="nonPlayScreens">
-        <h2>Instructions</h2>
-      </div>
-
-      <!--OPTIONS-->
-      <div id="optionsContainer" class="nonPlayScreens">
-        <h2>Options</h2>
-      </div>
-
-      <!--ABOUT-->
-      <div id="aboutContainer" class="nonPlayScreens">
-        <h2>About</h2>
+        <h2>Instructions</h2></summary>
+      <div id="instructions"></div>
       </div>
 
       <!--PLAY GAME CTA-->
       <div id="playButton" class="nonPlayScreens">
-        <h2>Play Game</h2>
+        <h2>Start Play</h2>
       </div>
 
       <!--GAME PLAY-->
@@ -50,30 +41,37 @@
         <!--Column 1: User Details-->
         <div id="colPlayer1" class="columns">
           <h4> Player 1</h4>
-          <div id="player1Lives">
-            <img id="1round3" src="images/lives/win.png"</img>
-            <img id="1round2" src="images/lives/win.png"</img>
-            <img id="1round1" src="images/lives/win.png"</img>
+          <div id="player1Lives" class="lives">
+            <img id="life4" src="images/lives/win.png"</img>
+            <img id="life3" src="images/lives/win.png"</img>
+            <img id="life2" src="images/lives/win.png"</img>
+            <img id="life1" src="images/lives/win.png"</img>
           </div>
           <div id="player1Avatar"></div>
+            <img id="player1" class="avatar" src="images/players/player1.png"></img>
         </div>
         <!--Column 2: Gameplay container-->
         <div id="colGameplay" class="columns">
         <!--Level Communication (3 total levels)-->
-          <h4 id="levelText"></h4>
+          <h4 id="level"></h4>
           <!--Game board-->
           <div id="gameBoardRow1" class="rows"></div>
           <div id="gameBoardRow2" class="rows"></div>
           <div id="gameBoardRow3" class="rows"></div>
           <div id="gameBoardRow4" class="rows"></div>
           <div id="gameBoardRow5" class="rows"></div>
-          <div id="gameBoardRow6" class="rows"></div>
         </div>
         <!--Column 3: Opponent Details-->
         <div id="colPlayer2" class="columns">
           <h4>Player 2</h4>
-          <div id="player2Lives"></div>
+          <div id="player2Lives">
+            <img id="life8" src="images/lives/win.png"</img>
+            <img id="life7" src="images/lives/win.png"</img>
+            <img id="life6" src="images/lives/win.png"</img>
+            <img id="life5" src="images/lives/win.png"</img>
+          </div>
           <div id="player2Avatar"></div>
+            <img id="player2" class="avatar" src="images/players/player2.png"></img>
         </div>
       </div>
 
@@ -82,6 +80,17 @@
         <!--Replacement of container contents to game play outcome-->
       </div>
 
+      <!--OPTIONS-->
+      <div id="optionsContainer" class="nonPlayScreens">
+        <h2>Options</h2>
+      <div id="options" class="options"></div>
+      </div>
+
+      <!--ABOUT-->
+      <div id="aboutContainer" class="nonPlayScreens">
+        <h2>About</h2>
+      <div id="about" class="about"></div>
+      </div>
     </main>
 
   <!--FOOTER-------------------------------->
