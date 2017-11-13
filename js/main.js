@@ -1,6 +1,6 @@
 $( () => {
 //------------------------------------------------------
-
+//CREATE GAMEBOARD
     const $row1 = $("#gameBoardRow1");
     const $row2 = $("#gameBoardRow2");
     const $row3 = $("#gameBoardRow3");
@@ -19,39 +19,51 @@ $( () => {
         $row5.append($bubbles5);
       };
 
-
-//GAMEPLAY
-
+//PLAYER LIVES/TURNS
   let $player1Lives = $(["#life1", "#life2", "#life3", "life4"]);
   let p1LifeCount = $player1Lives.length;
+  let $player2Lives = $(["#life5", "#life6", "#life7", "life8"]);
+  let p2LifeCount = $player2Lives.length;
+  let $bubbleCount = $(".bubbles").length;
+  console.log($player1Lives.length);
+  console.log($player2Lives.length);
+  console.log($bubbleCount);
 
-  if (p1LifeCount === 4) {
+//PLAYER MOVES
+  const $p1Button = $("#p1Done")
+  const $p2Button = $("#p2Done")
+
+  if (p1LifeCount >= 4) {
     let $bubbleBlue = $(".bubbles");
     let changeBlue = () => {
-      const blue = $(event.currentTarget).css("color", "blue");
+      const $blue = $(event.currentTarget).addClass("p1Selected").css("color", "blue");
     };
     $bubbleBlue.on("click", changeBlue);
-  } else {
-    let $bubbleRed = $(".bubbles");
-      let changeRed = () => {
-        const red = $(event.currentTarget).css("color", "red");
-      }
-      $bubbleRed.on("click",changeRed);
-    };
+  };
 
-  // let $player2Lives = {
-  //   $p2Lives: $(["#life5", "#life6", "#life7", "#life8"])
+  let $p1Click = $("#p1Done");
+  let removeBubble = () => {
+    const $removeBlue = $(".p1Selected").remove();
+  };
+  $p1Click.on("click", removeBubble);
+
+
+  // const removeBlue = () => {
+  //   let removeBlue = $(".p1Selected").remove();
+  //   $p1Button.on("click", removeBlue);
   // };
 
+    //$bubbleRemove.on("click", removeBlue);
+
+  // } else {
+  //   let $bubbleRed = $(".bubbles");
+  //     let changeRed = () => {
+  //       const red = $(event.currentTarget).css("color", "red");
+  //     }
+  //     $bubbleRed.on("click",changeRed);
+  //   };
 
 
-
-
-
-
-
-startGame();
-loadBoard();
 // loadPlayer1();
 
 //------------------------------------------------------
