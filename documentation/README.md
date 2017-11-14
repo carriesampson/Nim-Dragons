@@ -44,7 +44,7 @@ BOARD & GAMEPLAY LOGIC
 
 - startGame();
 
-- getBoard() for loop perhaps not possible given row restriction (RESEARCH THIS - for loop 	  applied to class for all rows? How to differentiate between bubbles?)
+- getBoard();
 
 - Valid click events must be limited to specific rows
     - if diagonal click-selection attempted
