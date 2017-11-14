@@ -39,11 +39,13 @@ h4 {
   font-family: 'Lakki Reddy', cursive;
   font-size: 18px;
   text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.nonPlayScreens {
+/*.nonPlayScreens {
   height: 100px;
-}
+}*/
 
 #gameplayContainer {
   display: flex;
@@ -56,6 +58,7 @@ h4 {
   display: flex;
   flex-grow: 2.5;
   flex-direction: column;
+  margin-top: 60px;
 }
 
 .rows {
@@ -67,6 +70,8 @@ h4 {
   display: flex;
   flex-grow: 1;
   justify-content: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 /*Player CSS*/
@@ -83,14 +88,25 @@ h4 {
   vertical-align: center;
 }
 
-#player1Lives {
+#p1Done {
+  text-align: center;
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 32px;
+  background-color: green;
+  color: white;
+  height: 50px;
+  width: 180px;
+  margin-left: 40px;
+
+
+/*#player1Lives {
   display: flex;
   justify-content: center;
 }
 #player2Lives {
   display: flex;
   justify-content: center;
-}
+}*/
 
 #colPlayer2 {
   display: flex;
