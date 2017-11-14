@@ -18,53 +18,64 @@ $( () => {
         $row4.append($bubbles4);
         $row5.append($bubbles5);
       };
-
-//PLAYER LIVES/TURNS
-  let $player1Lives = $(["#life1", "#life2", "#life3", "life4"]);
-  let p1LifeCount = $player1Lives.length;
-  let $player2Lives = $(["#life5", "#life6", "#life7", "life8"]);
-  let p2LifeCount = $player2Lives.length;
-  let $bubbleCount = $(".bubbles").length;
-  console.log($player1Lives.length);
-  console.log($player2Lives.length);
-  console.log($bubbleCount);
-
-//PLAYER MOVES
-  const $p1Button = $("#p1Done")
-  const $p2Button = $("#p2Done")
-
-  if (p1LifeCount >= 4) {
-    let $bubbleBlue = $(".bubbles");
-    let changeBlue = () => {
-      const $blue = $(event.currentTarget).addClass("p1Selected").css("color", "blue");
-    };
-    $bubbleBlue.on("click", changeBlue);
-  };
-
-  let $p1Click = $("#p1Done");
-  let removeBubble = () => {
-    const $removeBlue = $(".p1Selected").remove();
-  };
-  $p1Click.on("click", removeBubble);
-
-
-  // const removeBlue = () => {
-  //   let removeBlue = $(".p1Selected").remove();
-  //   $p1Button.on("click", removeBlue);
-  // };
-
-    //$bubbleRemove.on("click", removeBlue);
-
-  // } else {
-  //   let $bubbleRed = $(".bubbles");
-  //     let changeRed = () => {
-  //       const red = $(event.currentTarget).css("color", "red");
-  //     }
-  //     $bubbleRed.on("click",changeRed);
-  //   };
-
-
-// loadPlayer1();
-
 //------------------------------------------------------
+//GLOBAL VARIABLES
+  let $boardCount1 = $(".bubbles").length;
+  let $boardCount2 = $(".bubbles").length;
+  let $p1Click = $("#p1Done");
+  let $pClick2 = $("#p2Done");
+//------------------------------------------------------
+//START GAME
+  const startGame = () => {
+    player1Turn();
+  }
+//------------------------------------------------------
+// PLAYER 1 TURN FUNCTION
+  const player1Turn = () => {
+    if ($boardCount1 >= 1) {
+      let $bubbleBlue = $(".bubbles");
+      let changeBlue = () => {
+        const $blue = $(event.currentTarget).addClass("p1Selected").css("color", "blue");
+      };
+      $bubbleBlue.on("click", changeBlue);
+      } else {
+        console.log("Player 2 Wins!");
+    };
+  };
+//------------------------------------------------------
+// PLAYER 1 REMOVE BUBBLES
+  let removeBubble1 = () => {
+    const $removeBlue = $(".p1Selected").remove();
+    let $remainingBubbles1 = $(".bubbles").length
+    console.log($remainingBubbles1);
+    player2Turn();
+  };
+  $p1Click.on("click", removeBubble1);
+//------------------------------------------------------
+//PLAYER 2 TURN FUNCTION
+  const player2Turn = () => {
+    if ($boardCount2 >= 1) {
+      let $bubbleRed = $(".bubbles");
+      let changeRed = () => {
+        const $red = $(event.currentTarget).addClass("p2Selected").css("color", "red");
+      };
+      $bubbleRed.on("click", changeRed);
+      } else {
+        console.log("Player 1 Wins!");
+    };
+  };
+//------------------------------------------------------
+//PLAYER 2 REMOVE BUBBLES
+  let $p2Click = $("#p2Done");
+  let removeBubble2 = () => {
+    const $removeRed = $(".p2Selected").remove();
+    let $remainingBubbles1 = $(".bubbles").length
+    console.log($remainingBubbles1);
+    player1Turn();
+  };
+  $p2Click.on("click", removeBubble2);
+//------------------------------------------------------
+
+  startGame();
+
 });
