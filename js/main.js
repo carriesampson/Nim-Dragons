@@ -46,9 +46,13 @@ $( () => {
 // PLAYER 1 REMOVE BUBBLES
   let removeBubble1 = () => {
     const $removeBlue = $(".p1Selected").remove();
-    let $remainingBubbles1 = $(".bubbles").length
+    let $remainingBubbles1 = $(".bubbles").length;
     console.log($remainingBubbles1);
-    player2Turn();
+    if ($remainingBubbles1 >= 1) {
+      player2Turn();
+    } else {
+      console.log("Player 1 Wins!");
+    };
   };
   $p1Click.on("click", removeBubble1);
 //------------------------------------------------------
@@ -60,8 +64,6 @@ $( () => {
         const $red = $(event.currentTarget).addClass("p2Selected").css("color", "red");
       };
       $bubbleRed.on("click", changeRed);
-      } else {
-        console.log("Player 1 Wins!");
     };
   };
 //------------------------------------------------------
@@ -69,9 +71,13 @@ $( () => {
   let $p2Click = $("#p2Done");
   let removeBubble2 = () => {
     const $removeRed = $(".p2Selected").remove();
-    let $remainingBubbles1 = $(".bubbles").length
+    let $remainingBubbles1 = $(".bubbles").length;
     console.log($remainingBubbles1);
-    player1Turn();
+    if ($remainingBubbles1 >= 1) {
+      player1Turn();
+    } else {
+      console.log("Player 2 Wins!")
+    };
   };
   $p2Click.on("click", removeBubble2);
 //------------------------------------------------------
