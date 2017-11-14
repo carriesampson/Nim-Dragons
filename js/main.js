@@ -38,8 +38,6 @@ $( () => {
         const $blue = $(event.currentTarget).addClass("p1Selected").css("color", "blue");
       };
       $bubbleBlue.on("click", changeBlue);
-      } else {
-        console.log("Player 2 Wins!");
     };
   };
 //------------------------------------------------------
@@ -51,7 +49,8 @@ $( () => {
     if ($remainingBubbles1 >= 1) {
       player2Turn();
     } else {
-      console.log("Player 1 Wins!");
+      $player1Win.show();
+      $player1Win.delay(5000).hide("slow");
     };
   };
   $p1Click.on("click", removeBubble1);
@@ -76,12 +75,24 @@ $( () => {
     if ($remainingBubbles1 >= 1) {
       player1Turn();
     } else {
-      console.log("Player 2 Wins!")
+      $player2Win.show();
+      $player2Win.delay(5000).hide("slow");
     };
   };
   $p2Click.on("click", removeBubble2);
 //------------------------------------------------------
+// WIN STATES
+  const $player1Win = $("#player1Win");
+  let $p1Winner = $("<h4>").addClass("win").text("Player 1 Wins!");
+  $player1Win.append($p1Winner);
+  $player1Win.hide();
 
+  const $player2Win = $("#player2Win");
+  let $p2Winner = $("<h4>").addClass("win").text("Player 2 Wins!");
+  $player2Win.append($p2Winner);
+  $player2Win.hide();
+
+//------------------------------------------------------
   startGame();
-
+//------------------------------------------------------
 });
