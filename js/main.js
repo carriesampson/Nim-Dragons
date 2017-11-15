@@ -6,6 +6,7 @@ $( () => {
     const $row3 = $("#gameBoardRow3");
     const $row4 = $("#gameBoardRow4");
     const $row5 = $("#gameBoardRow5");
+
       for (let i = 0; i < 5; i++) {
         let $bubbles1 = $("<h2>").addClass("bubbles").text("O");
         let $bubbles2 = $("<h2>").addClass("bubbles").text("O");
@@ -29,7 +30,6 @@ $( () => {
   const startGame = () => {
     player1Turn();
   }
-
 //------------------------------------------------------
 // PLAYER 1 TURN FUNCTION
   const player1Turn = () => {
@@ -51,12 +51,43 @@ $( () => {
       player2Turn();
     } else {
       $player1Win.show();
+      $restart.show();
       $player1Win.delay(5000).hide("slow");
+      $restart.on("click", location.refresh());
     };
   };
   $p1Click.on("click", removeBubble1);
-
 //------------------------------------------------------
+//PLAYER 2 TURN FUNCTION
+  const player2Turn = () => {
+    $(".rows").removeClass("disableClicks");
+    if ($boardCount2 >= 1) {
+      let $bubbleRed = $(".bubbles");
+      let changeRed = () => {
+        const $red = $(event.currentTarget).addClass("p2Selected").css("color", "red");
+      };
+      $bubbleRed.on("click", changeRed);
+    };
+  };
+//------------------------------------------------------
+//PLAYER 2 REMOVE BUBBLES
+  let $p2Click = $("#p2Done");
+  let removeBubble2 = () => {
+    const $removeRed = $(".p2Selected").remove();
+    let $remainingBubbles1 = $(".bubbles").length;
+    console.log($remainingBubbles1);
+    if ($remainingBubbles1 >= 1) {
+      player1Turn();
+      $(".rows").removeClass("disableClicks");
+    } else {
+      $player2Win.show();
+      $restart.show();
+      $player2Win.delay(5000).hide("slow");
+      $restart.on("click", location.refresh());
+    };
+  };
+  $p2Click.on("click", removeBubble2);
+//--------------FOR DAN 1----------------------------------------
 //CLICK SUPPRESSION FOR RULES ENFORCEMENT (IN-ROW SELECTS ONLY)
   const suppress2345 = () => {
     $row2.addClass("disableClicks");
@@ -99,32 +130,6 @@ $( () => {
   $row4.on("click", suppress1235);
   $row5.on("click", suppress1234);
 
-//------------------------------------------------------
-//PLAYER 2 TURN FUNCTION
-  const player2Turn = () => {
-    if ($boardCount2 >= 1) {
-      let $bubbleRed = $(".bubbles");
-      let changeRed = () => {
-        const $red = $(event.currentTarget).addClass("p2Selected").css("color", "red");
-      };
-      $bubbleRed.on("click", changeRed);
-    };
-  };
-//------------------------------------------------------
-//PLAYER 2 REMOVE BUBBLES
-  let $p2Click = $("#p2Done");
-  let removeBubble2 = () => {
-    const $removeRed = $(".p2Selected").remove();
-    let $remainingBubbles1 = $(".bubbles").length;
-    console.log($remainingBubbles1);
-    if ($remainingBubbles1 >= 1) {
-      player1Turn();
-    } else {
-      $player2Win.show();
-      $player2Win.delay(5000).hide("slow");
-    };
-  };
-  $p2Click.on("click", removeBubble2);
 //------------------------------------------------------
 // WIN STATES & REPLAY CTA
   const $game = $("#colGameplay");
