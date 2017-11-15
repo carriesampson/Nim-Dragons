@@ -1,4 +1,5 @@
 $( () => {
+
 //------------------------------------------------------
 //CREATE GAMEBOARD
     const $row1 = $("#gameBoardRow1");
@@ -19,20 +20,25 @@ $( () => {
         $row4.append($bubbles4);
         $row5.append($bubbles5);
       };
+
 //------------------------------------------------------
 //GLOBAL VARIABLES
   let $boardCount1 = $(".bubbles").length;
   let $boardCount2 = $(".bubbles").length;
   let $p1Click = $("#p1Done");
   let $pClick2 = $("#p2Done");
+
 //------------------------------------------------------
 //START GAME
   const startGame = () => {
     player1Turn();
-  }
+  };
+
 //------------------------------------------------------
 // PLAYER 1 TURN FUNCTION
   const player1Turn = () => {
+    $p1Click.show();
+    $p2Click.hide();
     if ($boardCount1 >= 1) {
       let $bubbleBlue = $(".bubbles");
       let changeBlue = () => {
@@ -41,6 +47,7 @@ $( () => {
       $bubbleBlue.on("click", changeBlue);
     };
   };
+
 //------------------------------------------------------
 // PLAYER 1 REMOVE BUBBLES
   let removeBubble1 = () => {
@@ -50,15 +57,19 @@ $( () => {
     if ($remainingBubbles1 >= 1) {
       player2Turn();
     } else {
+      $p1Click.hide();
       $player1Win.show();
       $restart.show();
       $player1Win.delay(5000).hide("slow");
     };
   };
   $p1Click.on("click", removeBubble1);
+
 //------------------------------------------------------
 //PLAYER 2 TURN FUNCTION
   const player2Turn = () => {
+    $p2Click.show();
+    $p1Click.hide();
     $(".rows").removeClass("disableClicks");
     if ($boardCount2 >= 1) {
       let $bubbleRed = $(".bubbles");
@@ -68,6 +79,7 @@ $( () => {
       $bubbleRed.on("click", changeRed);
     };
   };
+
 //------------------------------------------------------
 //PLAYER 2 REMOVE BUBBLES
   let $p2Click = $("#p2Done");
@@ -79,48 +91,50 @@ $( () => {
       player1Turn();
       $(".rows").removeClass("disableClicks");
     } else {
+      $p2Click.hide();
       $player2Win.show();
       $restart.show();
       $player2Win.delay(5000).hide("slow");
     };
   };
   $p2Click.on("click", removeBubble2);
-//--------------FOR DAN 1----------------------------------------
+
+//------------------------------------------------------
 //CLICK SUPPRESSION FOR RULES ENFORCEMENT (IN-ROW SELECTS ONLY)
   const suppress2345 = () => {
     $row2.addClass("disableClicks");
     $row3.addClass("disableClicks");
     $row4.addClass("disableClicks");
     $row5.addClass("disableClicks");
-  }
+  };
 
   const suppress1345 = () => {
     $row1.addClass("disableClicks");
     $row3.addClass("disableClicks");
     $row4.addClass("disableClicks");
     $row5.addClass("disableClicks");
-  }
+  };
 
   const suppress1245 = () => {
     $row1.addClass("disableClicks");
     $row2.addClass("disableClicks");
     $row4.addClass("disableClicks");
     $row5.addClass("disableClicks");
-  }
+  };
 
   const suppress1235 = () => {
     $row1.addClass("disableClicks");
     $row2.addClass("disableClicks");
     $row3.addClass("disableClicks");
     $row5.addClass("disableClicks");
-  }
+  };
 
   const suppress1234 = () => {
     $row1.addClass("disableClicks");
     $row2.addClass("disableClicks");
     $row3.addClass("disableClicks");
     $row4.addClass("disableClicks");
-  }
+  };
 
   $row1.on("click", suppress2345);
   $row2.on("click", suppress1345);
@@ -156,5 +170,6 @@ $( () => {
 
 //------------------------------------------------------
   startGame();
+
 //------------------------------------------------------
 });
