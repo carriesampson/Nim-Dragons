@@ -1,8 +1,8 @@
 /*-----GLOBAL CSS-----*/
 
-* {
+/** {
   border: 1px solid gold;
-}
+}*/
 
 body {
   background-color: azure;
@@ -15,6 +15,7 @@ body {
 }
 
 /*-----TEXT CSS-----*/
+
 h1 {
   font-family: 'Lakki Reddy', cursive;
   font-size: 82px;
@@ -22,6 +23,8 @@ h1 {
   padding-top: 30px;
   margin-top: 5px;
   margin-bottom: 5px;
+  position: relative;
+  z-index: 100;
 }
 
 h2 {
@@ -148,4 +151,53 @@ li {
   font-family: 'Lakki Reddy', cursive;
   font-size: 32px;
   color: white;
+}
+
+/*-----CLOUD ANIMATION----*/
+
+#cloudsContainer {
+  height: 2px;
+}
+#cloud1 {
+transform: scale(1) translate(10px, -140px);
+position: relative;
+z-index: 1;
+}
+
+#cloud2 {
+transform: scale(1) translate(25px, -180px);
+position: relative;
+z-index: 1;
+}
+
+#cloud3 {
+transform: scale(1) translate(25px, -100px);
+position: relative;
+z-index: 1;
+}
+
+.cloud1,
+.cloud2 {
+  animation-delay: -1s;
+  animation-duration: 20s;
+  animation-name: moveAcross;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.cloud3 {
+  animation-delay: -2s;
+  animation-duration: 15s;
+  animation-name: moveAcross;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes moveAcross {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 110%;
+  }
 }
