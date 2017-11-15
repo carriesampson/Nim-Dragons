@@ -43,7 +43,7 @@ h3 {
 }
 h4 {
   font-family: 'Lakki Reddy', cursive;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
 }
 
@@ -53,7 +53,11 @@ h4 {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 15px;
-  background: #BBF6F4;
+  background: #96CDCD;
+}
+
+.instructionsHeader:hover {
+  background-color: #AEEEEE;
 }
 
 #textContainer {
@@ -61,14 +65,20 @@ h4 {
   max-width: 600px;
 }
 
+.instructions {
+  margin-bottom: 5px;
+}
+
 ol {
-  margin-bottom: 0px;
+  margin-bottom: 30px;
+  margin-left: 20px;
 }
 
 li {
   text-align: left;
-  padding-left: 10px;
-  padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 20px;
+  padding-top: 15px;
 }
 
 /*-----GAMEPLAY CSS------*/
@@ -100,6 +110,10 @@ li {
   margin-top: 5px;
 }
 
+.bubbles:hover {
+  transform: scale(1.1);
+}
+
 /*-----PLAYER CSS-----*/
 #colPlayer1,
 #colPlayer2 {
@@ -113,6 +127,7 @@ li {
 #player2 {
   display: flex;
   vertical-align: center;
+  margin-top: 20px;
   max-width: 275px;
 }
 
@@ -120,18 +135,26 @@ li {
   text-align: center;
   font-family: 'Lakki Reddy', cursive;
   font-size: 32px;
-  background-color: green;
+  background-color: gray;
   color: white;
   height: 50px;
   width: 180px;
   margin-left: 45px;
   margin-top: 40px;
   padding-top: 5px;
+  border-radius: 10px;
+}
+
+.done:hover {
+  background-color: #00868B;
 }
 /*-----WIN & RESET CSS-----*/
 
 .winner1 {
-  background: blue;
+  background: #176f94;
+}
+
+.win1 {
   text-align: center;
   font-family: 'Lakki Reddy', cursive;
   font-size: 42px;
@@ -139,18 +162,42 @@ li {
 }
 
 .winner2 {
-  background: red;
+  background: #8A2835;
+}
+
+.win2 {
   text-align: center;
   font-family: 'Lakki Reddy', cursive;
+  font-size: 42px;
   color: white;
 }
 
 .restart {
-  background: green;
+  background: #00868B;
+}
+
+/*
+Referenced the following article for animation 'pulse': https://css-tricks.com/almanac/properties/a/animation/
+*/
+
+.playAgain {
   text-align: center;
+  vertical-align: middle;
+  padding-top: 5px;
   font-family: 'Lakki Reddy', cursive;
-  font-size: 32px;
+  font-size: 28px;
   color: white;
+  animation-name: bounce;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce{
+  0% {transform: scale(1);}
+  50% {transform: scale(1.6);}
+  60% {transform: scale(1);}
+  80% {transform: scale(1.3);}
+  100% {transform: scale(1);}
 }
 
 /*-----CLOUD ANIMATION----*/
@@ -180,7 +227,7 @@ z-index: 1;
 .cloud2 {
   animation-delay: -1s;
   animation-duration: 20s;
-  animation-name: moveAcross;
+  animation-name: clouds;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -188,16 +235,32 @@ z-index: 1;
 .cloud3 {
   animation-delay: -2s;
   animation-duration: 15s;
-  animation-name: moveAcross;
+  animation-name: clouds;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
-@keyframes moveAcross {
+/*
+Sourced keyframes direction for cloud animation to allow it to move outside of the window as seen below from:
+https://css-tricks.com/starting-css-animations-mid-way/
+*/
+
+@keyframes clouds {
   0% {
     left: -500px;
   }
   100% {
     left: 110%;
   }
+}
+
+/*-----FOOTER------*/
+footer {
+  background: #96CDCD;
+  margin-top: 30px;
+}
+.footer {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 10px;
 }
