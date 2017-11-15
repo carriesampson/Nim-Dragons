@@ -29,6 +29,7 @@ $( () => {
   const startGame = () => {
     player1Turn();
   }
+
 //------------------------------------------------------
 // PLAYER 1 TURN FUNCTION
   const player1Turn = () => {
@@ -81,16 +82,25 @@ $( () => {
   };
   $p2Click.on("click", removeBubble2);
 //------------------------------------------------------
-// WIN STATES
+// WIN STATES & REPLAY CTA
+  const $game = $("#colGameplay");
   const $player1Win = $("#player1Win");
   let $p1Winner = $("<h4>").addClass("win").text("Player 1 Wins!");
   $player1Win.append($p1Winner);
+  $game.append($player1Win);
   $player1Win.hide();
 
   const $player2Win = $("#player2Win");
   let $p2Winner = $("<h4>").addClass("win").text("Player 2 Wins!");
   $player2Win.append($p2Winner);
+  $game.append($player2Win);
   $player2Win.hide();
+
+  const $restart = $("#restart");
+  let $playAgain = $("<h4>").addClass("playAgain").text("Play Again?");
+  $restart.append($playAgain);
+  $game.append($restart);
+  $restart.hide();
 
 //------------------------------------------------------
   startGame();

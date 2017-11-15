@@ -27,7 +27,8 @@
 
       <!--INSTRUCTIONS-->
       <div id="instructionsContainer" class="nonPlayScreens">
-        <h2>Instructions</h2></summary>
+        <h2>Instructions</h2>
+        <div id="instructions"></div>
       </div>
 
       <!--PLAY GAME CTA-->
@@ -55,11 +56,11 @@
         <!--Level Communication (3 total levels)-->
           <!-- <h4 id="level"></h4> -->
           <!--Game board-->
-          <div id="gameBoardRow1" class="rows"></div>
-          <div id="gameBoardRow2" class="rows"></div>
-          <div id="gameBoardRow3" class="rows"></div>
-          <div id="gameBoardRow4" class="rows"></div>
-          <div id="gameBoardRow5" class="rows"></div>
+          <div id="gameBoardRow1" class="rows" class="disableClick"></div>
+          <div id="gameBoardRow2" class="rows" class="disableClick"></div>
+          <div id="gameBoardRow3" class="rows" class="disableClick"></div>
+          <div id="gameBoardRow4" class="rows" class="disableClick"></div>
+          <div id="gameBoardRow5" class="rows" class="disableClick"></div>
         </div>
         <!--Column 3: Opponent Details-->
         <div id="colPlayer2" class="columns">
@@ -79,6 +80,7 @@
       <!--WIN STATE-->
       <div id="player1Win" class="winner"></div>
       <div id="player2Win" class="winner"></div>
+      <div id="restart" class="restart"></div>
 
       <!--OPTIONS-->
       <!-- <div id="optionsContainer" class="nonPlayScreens">
@@ -90,16 +92,12 @@
       <!-- <div id="aboutContainer" class="nonPlayScreens">
         <h2>About</h2>
       <div id="about" class="about"></div>
-      </div>
-    </main> -->
+      </div> -->
+    </main>
 
   <!--FOOTER-------------------------------->
     <footer>
-      <p id="footer">Created and presented by GA WDIR student: Carrie Sampson</p>
-      <!-- <div id="cloud-animation"> -->
-      <!--CSS animations to be leveraged in footer-->
-      </div>
+      <h4>Created and presented by GA WDIR student: Carrie Sampson</h4>
     </footer>
-
   </body>
 </html>

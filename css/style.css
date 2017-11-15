@@ -3,18 +3,25 @@ font-family: 'Lakki Reddy', cursive;
 font-family: 'Short Stack', cursive;
 font-family: 'Merienda One', cursive;
 font-family: 'Eagle Lake', cursive;
-
 Dragon Bubble: #BBF6F4
 */
 
+/*-----GLOBAL CSS-----*/
 * {
   border: 2px solid gold;
 }
 
 body {
   background-color: #F1F1F1;
+  cursor: pointer;
 }
 
+.disableClick {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/*-----TEXT CSS-----*/
 h1 {
   font-family: 'Lakki Reddy', cursive;
   font-size: 82px;
@@ -26,39 +33,39 @@ h1 {
 
 h2 {
   font-family: 'Lakki Reddy', cursive;
-  font-size: 36px;
+  font-size: 42px;
   text-align: center;
 }
 
 h3 {
   font-family: 'Lakki Reddy', cursive;
-  font-size: 24px;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-
 h4 {
   font-family: 'Lakki Reddy', cursive;
   font-size: 18px;
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 /*.nonPlayScreens {
   height: 100px;
 }*/
 
+/*-----GAMEPLAY CSS-----*/
 #gameplayContainer {
   display: flex;
   flex-direction: row;
   height: auto;
 }
 
-/*Gameplay CSS*/
 #colGameplay {
   display: flex;
   flex-grow: 2.5;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 
 .rows {
@@ -74,7 +81,7 @@ h4 {
   margin-top: 5px;
 }
 
-/*Player CSS*/
+/*-----PLAYER CSS-----*/
 #colPlayer1 {
   display: flex;
   flex-grow: .75;
@@ -88,7 +95,7 @@ h4 {
   vertical-align: center;
 }
 
-#p1Done {
+.done {
   text-align: center;
   font-family: 'Lakki Reddy', cursive;
   font-size: 32px;
@@ -96,8 +103,9 @@ h4 {
   color: white;
   height: 50px;
   width: 180px;
-  margin-left: 40px;
-
+  margin-left: 45px;
+  margin-top: 40px;
+  padding-top: 5px;
 
 /*#player1Lives {
   display: flex;
@@ -115,9 +123,4 @@ h4 {
   max-width: 275px;
 }
 
-/*Footer CSS*/
-#footer {
-  font-family: 'Lakki Reddy', cursive;
-  font-size: 18px;
-  text-align: center;
-}
+/*-----FOOTER CSS-----*/
