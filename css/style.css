@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #F1F1F1;
+  background-color: azure;
   cursor: pointer;
 }
 
@@ -46,15 +46,11 @@ h4 {
 
 /*-----INSTRUCTIONS CSS------*/
 
-.instructionsText {
+.instructionsHeader {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 15px;
   background: #BBF6F4;
-}
-
-#instructions {
-  background-color: azure;
 }
 
 #textContainer {
@@ -77,6 +73,7 @@ li {
   display: flex;
   flex-direction: row;
   height: auto;
+  margin-top: 20px;
 }
 
 #colGameplay {
@@ -127,3 +124,28 @@ li {
   margin-left: 45px;
   margin-top: 40px;
   padding-top: 5px;
+}
+/*-----WIN & RESET CSS-----*/
+
+.winner1 {
+  background: blue;
+  text-align: center;
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 42px;
+  color: white;
+}
+
+.winner2 {
+  background: red;
+  text-align: center;
+  font-family: 'Lakki Reddy', cursive;
+  color: white;
+}
+
+.restart {
+  background: green;
+  text-align: center;
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 32px;
+  color: white;
+}
