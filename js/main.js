@@ -33,6 +33,17 @@ $( () => {
   const startGame = () => {
     player1Turn();
   };
+//------------------------------------------------------
+// INSTRUCTIONS
+  const $insContainer = $("#instructionsContainer");
+  const $insHeader = $(".instructionsHeader");
+  const $insText = $("#instructionsText");
+  $insText.hide();
+
+  const insShow = () => {
+    $insText.toggle();
+  };
+  $insHeader.on("click", insShow);
 
 //------------------------------------------------------
 // PLAYER 1 TURN FUNCTION
@@ -146,13 +157,13 @@ $( () => {
 // WIN STATES & REPLAY CTA
   const $game = $("#colGameplay");
   const $player1Win = $("#player1Win");
-  let $p1Winner = $("<h4>").addClass("win").text("Player 1 Wins!");
+  let $p1Winner = $("<h4>").addClass("win1").text("Player 1 Wins!");
   $player1Win.append($p1Winner);
   $game.append($player1Win);
   $player1Win.hide();
 
   const $player2Win = $("#player2Win");
-  let $p2Winner = $("<h4>").addClass("win").text("Player 2 Wins!");
+  let $p2Winner = $("<h4>").addClass("win2").text("Player 2 Wins!");
   $player2Win.append($p2Winner);
   $game.append($player2Win);
   $player2Win.hide();
