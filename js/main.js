@@ -53,7 +53,6 @@ $( () => {
       $player1Win.show();
       $restart.show();
       $player1Win.delay(5000).hide("slow");
-      $restart.on("click", location.refresh());
     };
   };
   $p1Click.on("click", removeBubble1);
@@ -83,7 +82,6 @@ $( () => {
       $player2Win.show();
       $restart.show();
       $player2Win.delay(5000).hide("slow");
-      $restart.on("click", location.refresh());
     };
   };
   $p2Click.on("click", removeBubble2);
@@ -150,6 +148,11 @@ $( () => {
   $restart.append($playAgain);
   $game.append($restart);
   $restart.hide();
+
+  const refreshPage = () => {
+    location.reload();
+  };
+  $restart.on("click", refreshPage);
 
 //------------------------------------------------------
   startGame();
