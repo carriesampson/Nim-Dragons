@@ -55,6 +55,50 @@ $( () => {
     };
   };
   $p1Click.on("click", removeBubble1);
+
+//------------------------------------------------------
+//CLICK SUPPRESSION FOR RULES ENFORCEMENT (IN-ROW SELECTS ONLY)
+  const suppress2345 = () => {
+    $row2.addClass("disableClicks");
+    $row3.addClass("disableClicks");
+    $row4.addClass("disableClicks");
+    $row5.addClass("disableClicks");
+  }
+
+  const suppress1345 = () => {
+    $row1.addClass("disableClicks");
+    $row3.addClass("disableClicks");
+    $row4.addClass("disableClicks");
+    $row5.addClass("disableClicks");
+  }
+
+  const suppress1245 = () => {
+    $row1.addClass("disableClicks");
+    $row2.addClass("disableClicks");
+    $row4.addClass("disableClicks");
+    $row5.addClass("disableClicks");
+  }
+
+  const suppress1235 = () => {
+    $row1.addClass("disableClicks");
+    $row2.addClass("disableClicks");
+    $row3.addClass("disableClicks");
+    $row5.addClass("disableClicks");
+  }
+
+  const suppress1234 = () => {
+    $row1.addClass("disableClicks");
+    $row2.addClass("disableClicks");
+    $row3.addClass("disableClicks");
+    $row4.addClass("disableClicks");
+  }
+
+  $row1.on("click", suppress2345);
+  $row2.on("click", suppress1345);
+  $row3.on("click", suppress1245);
+  $row4.on("click", suppress1235);
+  $row5.on("click", suppress1234);
+
 //------------------------------------------------------
 //PLAYER 2 TURN FUNCTION
   const player2Turn = () => {
