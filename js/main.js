@@ -1,5 +1,7 @@
 $( () => {
 
+let devMode = false;
+
 //------------------------------------------------------
 //CREATE GAMEBOARD
     const $row1 = $("#gameBoardRow1");
@@ -65,13 +67,13 @@ $( () => {
     const $removeBlue = $(".p1Selected").remove();
     let $remainingBubbles1 = $(".bubbles").length;
     console.log($remainingBubbles1);
-    if ($remainingBubbles1 >= 1) {
+    if ($remainingBubbles1 >= 1 && !devMode ) {
       player2Turn();
     } else {
       $p1Click.hide();
       $player1Win.show();
       $restart.show();
-      $player1Win.delay(5000).hide("slow");
+      // $player1Win.delay(5000).hide("slow");
     };
   };
   $p1Click.on("click", removeBubble1);
@@ -98,14 +100,14 @@ $( () => {
     const $removeRed = $(".p2Selected").remove();
     let $remainingBubbles1 = $(".bubbles").length;
     console.log($remainingBubbles1);
-    if ($remainingBubbles1 >= 1) {
+    if ($remainingBubbles1 >= 1 && !devMode ) {
       player1Turn();
       $(".rows").removeClass("disableClicks");
     } else {
       $p2Click.hide();
       $player2Win.show();
       $restart.show();
-      $player2Win.delay(5000).hide("slow");
+      // $player2Win.delay(5000).hide("slow");
     };
   };
   $p2Click.on("click", removeBubble2);
