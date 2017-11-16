@@ -20,7 +20,7 @@ h1 {
   font-family: 'Lakki Reddy', cursive;
   font-size: 82px;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 65px;
   margin-top: 5px;
   margin-bottom: 5px;
   position: relative;
@@ -216,7 +216,7 @@ z-index: 1;
 }
 
 #cloud2 {
-transform: scale(1) translate(25px, -180px);
+transform: scale(1.2) translate(25px, -180px);
 position: relative;
 z-index: 1;
 }
