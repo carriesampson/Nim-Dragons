@@ -41,6 +41,7 @@ h3 {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 h4 {
   font-family: 'Lakki Reddy', cursive;
   font-size: 20px;
@@ -149,6 +150,7 @@ li {
 .done:hover {
   background-color: #00868B;
 }
+
 /*-----WIN & RESET CSS-----*/
 
 .winner1 {
@@ -206,6 +208,7 @@ Referenced the following article for animation 'pulse': https://css-tricks.com/a
 #cloudsContainer {
   height: 2px;
 }
+
 #cloud1 {
 transform: scale(1) translate(10px, -140px);
 position: relative;
@@ -260,6 +263,7 @@ footer {
   background: #96CDCD;
   margin-top: 30px;
 }
+
 .footer {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -269,6 +273,7 @@ footer {
 #cloudsContainer {
   height: 2px;
 }
+
 #cloud4 {
 transform: scale(1.3) translate(10px, -10px);
 position: relative;
