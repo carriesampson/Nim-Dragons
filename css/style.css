@@ -210,7 +210,7 @@ Referenced the following article for animation 'pulse': https://css-tricks.com/a
 }
 
 #cloud1 {
-transform: scale(1) translate(10px, -140px);
+transform: scale(1.1) translate(10px, -140px);
 position: relative;
 z-index: 1;
 }
@@ -222,7 +222,7 @@ z-index: 1;
 }
 
 #cloud3 {
-transform: scale(1) translate(25px, -100px);
+transform: scale(1.1) translate(25px, -100px);
 position: relative;
 z-index: 1;
 }
