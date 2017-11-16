@@ -13,8 +13,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/main.js"></script>
   </head>
-
   <body>
+
     <!--HEADER-------------------------------->
     <header>
       <h1>Nim Dragons</h1>
@@ -25,10 +25,11 @@
       </div>
     </header>
 
+
     <!--MAIN CONTAINERS----------------------->
     <main id="main">
 
-    <!--INSTRUCTIONS-------------------------->
+      <!--INSTRUCTIONS-->
       <div id="instructionsContainer">
         <h2 class="instructionsHeader">Click for Instructions</h2>
         <div id="instructionsText">
@@ -43,15 +44,18 @@
           </div>
         </div>
       </div>
-    <!--GAME PLAY----------------------------->
+
+      <!--GAME PLAY-->
       <div id="gameplayContainer">
-        <!--Column 1: User Details-->
+
+        <!--Column 1: Player 1 Details-->
         <div id="colPlayer1" class="columns">
           <h3>Player 1</h3>
           <div id="player1Avatar"></div>
             <img id="player1" class="avatar" src="images/players/player1.png"></img>
             <button id="p1Done" class="done">Done!</button>
         </div>
+
         <!--Column 2: Gameplay container-->
         <div id="colGameplay" class="columns">
           <div id="gameBoardRow1" class="rows"></div>
@@ -60,16 +64,18 @@
           <div id="gameBoardRow4" class="rows"></div>
           <div id="gameBoardRow5" class="rows"></div>
         </div>
-        <!--Column 3: Opponent Details-->
+
+        <!--Column 3: Player 2 Details-->
         <div id="colPlayer2" class="columns">
           <h3>Player 2</h3>
           <div id="player2Avatar"></div>
             <img id="player2" class="avatar" src="images/players/player2.png"></img>
             <button id="p2Done" class="done">Done!</button>
         </div>
+
       </div>
 
-    <!--WIN STATE----------------------------->
+      <!--WIN STATE-->
       <div id="player1Win" class="winner1"></div>
       <div id="player2Win" class="winner2"></div>
       <div id="restart" class="restart"></div>
@@ -86,5 +92,6 @@
       <img id="cloud5" class="cloud5" src="images/clouds/cloud3.png"></img>
       <img id="cloud6" class="cloud6" src="images/clouds/cloud2.png"></img>
     </div>
+
   </body>
 </html>

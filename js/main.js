@@ -35,6 +35,7 @@ let devMode = false;
   const startGame = () => {
     player1Turn();
   };
+  
 //------------------------------------------------------
 // INSTRUCTIONS
   const $insContainer = $("#instructionsContainer");
