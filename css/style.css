@@ -264,3 +264,55 @@ footer {
   margin-bottom: 5px;
   padding-top: 10px;
 }
+
+#cloudsContainer {
+  height: 2px;
+}
+#cloud4 {
+transform: scale(1.3) translate(10px, -10px);
+position: relative;
+z-index: 1;
+}
+
+#cloud5 {
+transform: scale(1.3) translate(25px, -10px);
+position: relative;
+z-index: 1;
+}
+
+#cloud6 {
+transform: scale(1.3) translate(25px, 75px);
+position: relative;
+z-index: 1;
+}
+
+.cloud4,
+.cloud5 {
+  animation-delay: -2s;
+  animation-duration: 17s;
+  animation-name: clouds;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.cloud6 {
+  animation-delay: -3s;
+  animation-duration: 20s;
+  animation-name: clouds;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/*
+Sourced keyframes direction for cloud animation to allow it to move outside of the window as seen below from:
+https://css-tricks.com/starting-css-animations-mid-way/
+*/
+
+@keyframes clouds {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 110%;
+  }
+}
